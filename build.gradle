@@ -20,17 +20,14 @@ repositories {
 }
 
 ext {
-    temporalVersion = '1.15.0-SNAPSHOT'
+    temporalVersion = '1.16.0-SNAPSHOT'
     springBootVersion = '2.7.2'
     logbackVersion = '1.2.11'
 }
 
 dependencies {
-    implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
-
     implementation "io.temporal:temporal-testing:${temporalVersion}"
-    implementation "io.temporal:temporal-sdk:${temporalVersion}"
-    implementation "io.temporal:temporal-spring-boot-autoconfigure-alpha:${temporalVersion}"
+    implementation "io.temporal:temporal-spring-boot-starter-alpha:${temporalVersion}"
 
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
 }

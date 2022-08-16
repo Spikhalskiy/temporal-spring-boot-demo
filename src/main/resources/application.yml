@@ -19,17 +19,18 @@
 #
 
 spring.temporal:
-  testServer:
-    enabled: true
-  serviceStubs:
-    target: local
-  namespace: default
-  workers:
-    - taskQueue: UnitTest
+  connection.target: local
+  # uncomment to use test server instead of local Temporal Server
+#  test-server.enabled: true
+
+  # Auto-discovery
+  workersAutoDiscovery:
+    packages:
+      - io.temporal
+  # Explicit workers config
+#  workers:
+#    - taskQueue: UnitTest
 #      workflowClasses:
 #        - io.temporal.demo.TestWorkflowImpl
 #      activityBeans:
 #        - TestActivityImpl
-  workersAutoDiscovery:
-    packages:
-      - io.temporal
